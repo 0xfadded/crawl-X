@@ -16,7 +16,7 @@ cargo run -- elonmusk
 
 Or pass via command line:
 ```bash
-cargo run -- elonmusk
+TWITTER_USERNAME="..." TWITTER_PASSWORD="..." cargo run -- elonmusk
 ```
 
-It uses `agent-twitter-client` which is designed to emulate Twitter Web Client behavior (using cookies and the `UserAuth` flow) to minimize banning.
+It uses `agent-twitter-client` which is designed to emulate Twitter Web Client behavior (using cookies and the `UserAuth` flow) to minimize banning. It will also save the auth session to `cookies.json` to persist the login state, which significantly lowers the risk of blocks on subsequent runs.
